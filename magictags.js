@@ -3,44 +3,33 @@
 //  https://github.com/justinallen/magic-tags
 //  Place link to this script at bottom of HTML file
 
+// HERE GOES:
 // get all the stuff into one big string
 
-var entry = $("ul#magic-tags-list li");
-var stuff = entry.innerHTML;
+var entries = $("ul#magic-tags-list li");
+var stuff = entries.innerHTML;
+var longString = "";
 
-// console.log("This is entry:");
-// console.log(entry);
+$(entries).each( function( index ) {
 
-var longstring = "";
-
-$(entry).each( function( index ) {
-
-  // console.log( "Hello Ben" + index );
-  // console.log( index + ": " + $(this).text() );
-    longstring += $(this).text() + ", ";
-	return longstring;
+    // for each entry, pull text out and add to a long string
+    longString += $(this).text() + ", ";
+	return longString;
 
 });
 
- // console.log("Hello ben");
- // console.log(longstring);
-
-// got it all in a long string! 
+// slice last comma and space off the end - 'slice' is nice
+var strLen = longString.length;
+var longStringCut = longString.slice(0,strLen-2);
 
 // convert comma separated string to array
-
-var stuffArray = longstring.split(',');
-
-// console.log("This is stuffArray:");
-// console.log(stuffArray);
+var stuffArray = longStringCut.split(',');
 
 // clean array of duplicates
-
 var cleanList = stuffArray.reduce(function(a,b){
     if (a.indexOf(b) < 0 ) a.push(b);
     return a;
   },[]);
-
 
 // console.log("This is cleanList:");
 // console.log(cleanList);
@@ -53,7 +42,7 @@ $.each( cleanList, function( index, value ) {
 	var text = value;
 	var text = text.trim();
 	var link = '<a class="magic-link" href="#' + text + '">' + text + '</a>' + '<i> </i>'; 
-    console.log(link);
+    // console.log(link);
 	$(link).appendTo(linkList);
 });
 
