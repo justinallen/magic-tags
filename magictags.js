@@ -5,7 +5,7 @@
 
 // get all the stuff into one big string
 
-var entry = $("li.entry");
+var entry = $("ul#magic-tags-list li");
 var stuff = entry.innerHTML;
 
 // console.log("This is entry:");
@@ -52,8 +52,8 @@ $.each( cleanList, function( index, value ) {
     //  alert(index + ': ' + value);
 	var text = value;
 	var text = text.trim();
-	var link = '<a class="magic-link" href="#' + text + '">' + text + '</a>'; 
-	// console.log(link);
+	var link = '<a class="magic-link" href="#' + text + '">' + text + '</a>' + '<i> </i>'; 
+    console.log(link);
 	$(link).appendTo(linkList);
 });
 
@@ -64,7 +64,7 @@ $(document).ready( function(){
 
 	$("#magic-tags-box").html(linkList);
 	
-	$("<span> * </span>").insertAfter("a.magic-link");
+	$(" ").insertAfter("a.magic-link");
 
 	$('<a class="magic-link-show-all" href="#">Show All</a>').appendTo("#magic-tags-box");
 
@@ -83,15 +83,15 @@ $(document).ready( function(){
 		// if contains word and is currently hidden, show
 
 
-		$("li.entry").each( function( index ) {
+		$("ul#magic-tags-list li").each( function( index ) {
 
 			// var myItem = $(this).html();
 			// console.log(myItem);
 
 			if ( $(this).text().indexOf(word) >= 0 ) {
 				// show if hidden
-				var whatIsThis = $(this);
-				console.log(whatIsThis + " has a " + word);
+				// var whatIsThis = $(this);
+				// console.log(whatIsThis + " has a " + word);
 
 				if ( $(this).is(":hidden") ) {
 					$(this).slideDown();
@@ -99,8 +99,8 @@ $(document).ready( function(){
 
 			} else {
 				// hide if shown
-				var whatIsThis = $(this);
-				console.log(whatIsThis + " does NOT have a " + word);
+				// var whatIsThis = $(this);
+				// console.log(whatIsThis + " does NOT have a " + word);
 
 				if ( $(this).is(":visible") ) {
 					$(this).slideUp();
@@ -120,7 +120,7 @@ $(document).ready( function(){
 		$('a').removeAttr('id', 'magic-pressed');
 		$(this).attr('id', 'magic-pressed');
 
-		$("li.entry").each( function( index ) {
+		$("ul#magic-tags-list li").each( function( index ) {
 
 			$(this).slideDown();
 
