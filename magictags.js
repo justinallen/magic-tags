@@ -51,11 +51,11 @@ var output = document.querySelectorAll("p.tags-output");
 
 $(document).ready( function(){
 
-	$("#magic-tags-box").html(linkList);
+	$("#magic-tags-output").html(linkList);
 	
 	$(" ").insertAfter("a.magic-link");
 
-	$('<a class="magic-link-show-all" href="#">Show All</a>').appendTo("#magic-tags-box");
+	$('<a class="magic-link-show-all" href="#">Show All</a>').appendTo("#magic-tags-output");
 
 	// ok, now I need a filter by click function
 
