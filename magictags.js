@@ -6,7 +6,7 @@
 // HERE GOES:
 // get all the stuff into one big string
 
-var entries = $("ul#magic-tags-list li");
+var entries = $("ul#magic-tags-list li .magic-words");
 // var stuff = entries.innerHTML;
 var longString = "";
 
@@ -77,7 +77,7 @@ $(document).ready( function(){
 		// if contains word and is currently hidden, show
 
 
-		$("ul#magic-tags-list li").each( function( index ) {
+		$("ul#magic-tags-list li .magic-words").each( function( index ) {
 
 			// var myItem = $(this).html();
 			// console.log(myItem);
@@ -87,8 +87,8 @@ $(document).ready( function(){
 				// var whatIsThis = $(this);
 				// console.log(whatIsThis + " has a " + word);
 
-				if ( $(this).is(":hidden") ) {
-					$(this).slideDown();
+				if ( $(this).parent().is(":hidden") ) {
+					$(this).parent().slideDown();
 				} 
 
 			} else {
@@ -96,8 +96,8 @@ $(document).ready( function(){
 				// var whatIsThis = $(this);
 				// console.log(whatIsThis + " does NOT have a " + word);
 
-				if ( $(this).is(":visible") ) {
-					$(this).slideUp();
+				if ( $(this).parent().is(":visible") ) {
+					$(this).parent().slideUp();
 				} 
 
 			}
