@@ -7,8 +7,10 @@
 // get all the stuff into one big string
 
 var entries = $("ul#magic-tags-list li");
-var stuff = entries.innerHTML;
+// var stuff = entries.innerHTML;
 var longString = "";
+
+console.log(entries);
 
 $(entries).each( function( index ) {
 
@@ -23,7 +25,10 @@ var strLen = longString.length;
 var longStringCut = longString.slice(0,strLen-2);
 
 // convert comma separated string to array
-var stuffArray = longStringCut.split(',');
+var stuffArray = $.map( longStringCut.split(','), $.trim ); 
+
+// console.log("This is stuffArray");
+// console.log(stuffArray);
 
 // clean array of duplicates
 var cleanList = stuffArray.reduce(function(a,b){
@@ -66,7 +71,7 @@ $(document).ready( function(){
 
 		var word = $(this).html();
 		var wordHash = "#" + word;
-		
+
 		// for loop here to iterate over list
 		// hide if does not contain word
 		// if contains word and is currently hidden, show
