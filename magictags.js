@@ -47,7 +47,7 @@ $.each( cleanList, function( index, value ) {
 });
 
 
-var output = document.querySelectorAll("p.tags-output");
+// var output = document.querySelectorAll("p.tags-output");
 
 $(document).ready( function(){
 
@@ -59,14 +59,14 @@ $(document).ready( function(){
 
 	// ok, now I need a filter by click function
 
-	$("a.magic-link").click( function() {
+	$("a.magic-link").click( function(e) {
 
 		$('a').removeAttr('id', 'magic-pressed');
 		$(this).attr('id', 'magic-pressed');
 
 		var word = $(this).html();
-		// console.log(word);
-
+		var wordHash = "#" + word;
+		
 		// for loop here to iterate over list
 		// hide if does not contain word
 		// if contains word and is currently hidden, show
@@ -97,14 +97,17 @@ $(document).ready( function(){
 
 			}
 
-
 		});
+
+		e.preventDefault();
 
 	// end click handler
 	});
 
 
-	$("a.magic-link-show-all").click( function() {
+	$("a.magic-link-show-all").click( function(e) {
+
+		e.preventDefault();
 
 		$('a').removeAttr('id', 'magic-pressed');
 		$(this).attr('id', 'magic-pressed');
@@ -114,6 +117,7 @@ $(document).ready( function(){
 			$(this).slideDown();
 
 		});
+
 
 	// end click handler
 	});
