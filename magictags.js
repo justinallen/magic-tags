@@ -55,9 +55,9 @@ $.each( cleanList, function( index, value ) {
 $('.magic-words').each( function(){
 
 	var text = $(this).html().split(",");
-	console.log(text);
+	// console.log(text);
 	var len = text.length;
-	console.log(len);
+	// console.log(len);
 	var result = [];
 
 	for( var i = 0; i < len; i++ ) {
@@ -99,6 +99,21 @@ $(document).ready( function(){
 			// var myItem = $(this).html();
 			// console.log(myItem);
 
+			// Add selected class if it contains the magic word
+			$(".magic-words span").each( function( index ) {
+
+				if ( $(this).text().indexOf(word) >=0 ) {
+					var testThis = $(this).text();
+					console.log('What is this:' + testThis);
+					$(this).addClass("magic-word-active");
+				} else {
+					$(this).removeClass("magic-word-active");
+				}
+
+			});
+
+
+			// Show and hide list item if it contains the magic word
 			if ( $(this).text().indexOf(word) >= 0 ) {
 				// show if hidden
 				// var whatIsThis = $(this);
@@ -140,6 +155,7 @@ $(document).ready( function(){
 
 		});
 
+		$(".magic-words span").removeClass("magic-word-active");
 
 	// end click handler
 	});
