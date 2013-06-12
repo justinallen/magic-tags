@@ -15,7 +15,7 @@ A minimalist plugin that takes a list of elements and makes them sortable based 
 
 Magic Tags requires two markup elements on your HTML page, one for input (a list to sort) and one for output (a place to put the magic tags). 
 
-The input must be a ul element with an id of `magic-tags-list` with `li` items that are to be sorted placed in an element with a class of `magic-words`. Separate the 'magic words' by comma. 
+The input must be a `ul` element with an id of `magic-tags-list` with `li` items that are to be sorted placed in an element with a class of `magic-words`. Separate the 'magic words' by comma. 
 
 ```html
 <ul id="magic-tags-list">
@@ -35,7 +35,7 @@ The output must be a page element with the id of `magic-tags-output`.
 
 That's all there is to it! Put comma separated words, or have your CMS output them, into the sortable area of the list items, and the plugin creates the magic tags that you can sort your list by. 
 
-Apply CSS styling as you like. Magic Tags wraps your words in span tags, and the currently active tag will have a `magic-word-active` class placed on the words in your list, so you can make them eye-catching. There's also a `magic-pressed` id placed on the tag that has just been pressed.
+Apply CSS styling as you like. Magic Tags wraps your words in `span` tags, and the currently active tag will have a `magic-word-active` class placed on the words in your list, so you can make them eye-catching. There's also a `magic-pressed` id placed on the tag that has just been pressed.
 
 ---
 
