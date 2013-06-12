@@ -5,6 +5,8 @@ Magic Tags jQuery Plugin
 by Justin Allen
 May, 2013
 
+![magic tags thumbnail](http://justinallen.us/lab/magic-tags-thumb.jpg "Magic Tags Thumbnail")
+
 [View demo.](http://justinallen.us/lab/magic-tags/demo.html)
 
 A minimalist plugin that takes a list of elements and makes them into a sortable list based on the words they contain. "Magic Tags" automagically creates a tag cloud with links that sort the list. 
