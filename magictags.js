@@ -51,6 +51,23 @@ $.each( cleanList, function( index, value ) {
 	$(link).appendTo(linkList);
 });
 
+// wrap words in span tags
+$('.magic-words').each( function(){
+
+	var text = $(this).html().split(",");
+	console.log(text);
+	var len = text.length;
+	console.log(len);
+	var result = [];
+
+	for( var i = 0; i < len; i++ ) {
+		result[i] = '<span>' + text[i] + '</span>';
+	}
+
+	$(this).html(result.join(', '));
+
+});
+
 
 // var output = document.querySelectorAll("p.tags-output");
 
@@ -86,7 +103,7 @@ $(document).ready( function(){
 				// show if hidden
 				// var whatIsThis = $(this);
 				// console.log(whatIsThis + " has a " + word);
-
+				
 				if ( $(this).parent().is(":hidden") ) {
 					$(this).parent().slideDown();
 				} 
