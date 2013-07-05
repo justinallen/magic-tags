@@ -3,6 +3,8 @@
 //  https://github.com/justinallen/magic-tags
 //  Place link to this script at bottom of HTML file
 
+(function(){
+
 // HERE GOES:
 // get all the stuff into one big string
 
@@ -161,4 +163,7 @@ $(document).ready( function(){
 	});
 
 });
+
+})();
+
 
