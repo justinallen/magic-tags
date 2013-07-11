@@ -9,6 +9,8 @@ May, 2013
 
 [View demo.](http://justinallen.us/lab/magic-tags/demo.html)
 
+[View example in practice.](http://techunderground.org/members)
+
 A minimalist plugin that takes a list of elements and makes them sortable based on the words they contain. "Magic Tags" automagically creates a tag cloud with links that sort the list. 
 
 ###Instructions
